@@ -2,7 +2,7 @@
     animation: spin $second linear infinite;
 }
 
-@mixin cube($name, $url, $size, $isSpin: false) {
+@mixin cube($name, $url, $top-bottom-position, $size, $isSpin: false) {
     $half-size: $size / 2;
 
     body {
@@ -50,12 +50,12 @@
 
         [data-#{$name}-top] {
             transform: translate3d(0, -1 * $half-size, 0) rotateX(-90deg);
-            background-position: -1 * $size 0px;
+            background-position: -1 * $top-bottom-position * $size 0;
         }
 
         [data-#{$name}-bottom] {
             transform: translate3d(0, $half-size, 0) rotateX(90deg);
-            background-position: -1 * $size -2 * $size;
+            background-position: -1 * $top-bottom-position * $size -2 * $size;
         }
     }
 }

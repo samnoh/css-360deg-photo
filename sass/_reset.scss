@@ -1,0 +1,14 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    perspective: 500px;
+    background: grey;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}

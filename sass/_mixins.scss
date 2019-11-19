@@ -2,6 +2,7 @@
     animation: spin $second linear infinite;
 }
 
+//  $top-bottom-position starts from 0 to 3
 @mixin cube($name, $url, $top-bottom-position, $size, $isSpin: false) {
     $half-size: $size / 2;
 

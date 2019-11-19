@@ -11,13 +11,13 @@ body {
   box-sizing: border-box; }
 
 [data-cube-env] {
-  animation: spin 20s linear infinite;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite; }
   [data-cube-env] div {
-    background-image: url("http://paulbourke.net/miscellaneous/cubemaps/cube.jpg");
+    background-image: url(http://paulbourke.net/miscellaneous/cubemaps/cube.jpg);
     position: absolute;
     margin: -500px 0 0 -500px;
     width: 1000px;
@@ -37,10 +37,13 @@ body {
     background-position: -2000px -1000px; }
   [data-cube-env] [data-cube-top] {
     transform: translate3d(0, -500px, 0) rotateX(-90deg);
-    background-position: -998px 0px; }
+    background-position: -1000px 0px; }
   [data-cube-env] [data-cube-bottom] {
     transform: translate3d(0, 500px, 0) rotateX(90deg);
     background-position: -1000px -2000px; }
+
+[data-cube-env] [data-cube-top] {
+  background-position: -998px 0px; }
 
 @keyframes spin {
   to {

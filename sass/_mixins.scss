@@ -1,0 +1,55 @@
+@mixin spin($second) {
+    animation: spin $second linear infinite;
+}
+
+@mixin cube($name, $url, $size, $isSpin: false) {
+    [data-#{$name}-env] {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-style: preserve-3d;
+
+        @if $isSpin {
+            @include spin(20s);
+        }
+
+        div {
+            background-image: url(#{$url});
+            position: absolute;
+            margin: -1 * $size / 2 0 0 -1 * $size / 2;
+            width: $size;
+            height: $size;
+            backface-visibility: hidden;
+        }
+
+        [data-#{$name}-front] {
+            transform: translate3d(0, 0, 500px) rotateY(180deg);
+            background-position: -3 * $size -1 * $size;
+        }
+
+        [data-#{$name}-back] {
+            transform: translate3d(0, 0, -500px);
+            background-position: -1 * $size -1 * $size;
+        }
+
+        [data-#{$name}-left] {
+            transform: translate3d(-500px, 0, 0) rotateY(90deg);
+            background-position: 0 -1 * $size;
+        }
+
+        [data-#{$name}-right] {
+            transform: translate3d(500px, 0, 0) rotateY(-90deg);
+            background-position: -2 * $size -1 * $size;
+        }
+
+        [data-#{$name}-top] {
+            transform: translate3d(0, -500px, 0) rotateX(-90deg);
+            background-position: -1 * $size 0px;
+        }
+
+        [data-#{$name}-bottom] {
+            transform: translate3d(0, 500px, 0) rotateX(90deg);
+            background-position: -1 * $size -2 * $size;
+        }
+    }
+}

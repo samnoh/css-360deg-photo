@@ -3,7 +3,7 @@
 }
 
 //  $top-bottom-position starts from 0 to 3
-@mixin cube($name, $url, $top-bottom-position, $size, $isSpin: false) {
+@mixin cube($name, $url, $top-bottom-position, $size, $isSpinning: false) {
     $half-size: $size / 2;
 
     body {
@@ -16,7 +16,7 @@
         left: 50%;
         transform-style: preserve-3d;
 
-        @if $isSpin {
+        @if $isSpinning {
             @include spin(20s);
         }
 

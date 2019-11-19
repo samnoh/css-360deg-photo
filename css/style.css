@@ -1,3 +1,5 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
 html,
 body {
   height: 100%; }
@@ -13,18 +15,18 @@ body {
   perspective: 500px; }
 
 [data-cube-env] {
+  transform-style: preserve-3d;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-style: preserve-3d;
   animation: spin 20s linear infinite; }
   [data-cube-env] div {
     background-image: url(http://paulbourke.net/miscellaneous/cubemaps/cube.jpg);
     position: absolute;
     margin: -500px 0 0 -500px;
-    width: 1000px;
+    backface-visibility: hidden;
     height: 1000px;
-    backface-visibility: hidden; }
+    width: 1000px; }
   [data-cube-env] [data-cube-front] {
     transform: translate3d(0, 0, 500px) rotateY(180deg);
     background-position: -3000px -1000px; }

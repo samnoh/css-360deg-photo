@@ -2,8 +2,7 @@
     animation: spin $second linear infinite;
 }
 
-//  $top-bottom-position starts from 0 to 3
-@mixin cube($name, $url, $top-bottom-position, $size, $isSpinning: false) {
+@mixin cube($name, $url, $size, $isSpinning: false) {
     $half-size: $size / 2;
 
     body {
@@ -11,10 +10,8 @@
     }
 
     [data-#{$name}-env] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
         transform-style: preserve-3d;
+        @include position(absolute, 50% null null 50%);
 
         @if $isSpinning {
             @include spin(20s);
@@ -24,9 +21,8 @@
             background-image: url(#{$url});
             position: absolute;
             margin: -1 * $half-size 0 0 -1 * $half-size;
-            width: $size;
-            height: $size;
             backface-visibility: hidden;
+            @include size($size);
         }
 
         [data-#{$name}-front] {
@@ -51,12 +47,12 @@
 
         [data-#{$name}-top] {
             transform: translate3d(0, -1 * $half-size, 0) rotateX(-90deg);
-            background-position: -1 * $top-bottom-position * $size 0;
+            background-position: -1 * $size 0;
         }
 
         [data-#{$name}-bottom] {
             transform: translate3d(0, $half-size, 0) rotateX(90deg);
-            background-position: -1 * $top-bottom-position * $size -2 * $size;
+            background-position: -1 * $size -2 * $size;
         }
     }
 }

@@ -15,6 +15,8 @@ class Element {
         for (const key of Object.keys(styleObj)) {
             this.element.style[key] = styleObj[key];
         }
+
+        return this;
     }
 
     _rotate({ pageX }) {
@@ -37,6 +39,8 @@ class Element {
             this.element.addEventListener('mouseup', this._removeDraggable);
             this.element.addEventListener('mouseleave', this._removeDraggable);
         });
+
+        return this;
     }
 }
 

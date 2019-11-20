@@ -19,10 +19,9 @@ class Element {
 
     _rotate({ pageX }) {
         if (pageX == this.pageX) return;
-        else if (pageX > this.pageX) this.currYDeg = (this.currYDeg - 2) % 360;
-        else this.currYDeg = (this.currYDeg + 2) % 360;
 
-        this.setStyle({ transform: `rotateY(${this.currYDeg}deg)` });
+        this.currYDeg = pageX > this.pageX ? this.currYDeg - 2 : this.currYDeg + 2;
+        this.setStyle({ transform: `rotateY(${this.currYDeg % 360}deg)` });
         this.pageX = pageX;
     }
 

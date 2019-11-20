@@ -14,35 +14,34 @@ body {
 body {
   perspective: 500px; }
 
-[data-cube-env] {
+.cube {
   transform-style: preserve-3d;
   position: absolute;
   top: 50%;
-  left: 50%;
-  animation: spin 20s linear infinite; }
-  [data-cube-env] div {
+  left: 50%; }
+  .cube div {
     background-image: url(http://paulbourke.net/miscellaneous/cubemaps/cube.jpg);
     position: absolute;
     margin: -500px 0 0 -500px;
     backface-visibility: hidden;
     height: 1000px;
     width: 1000px; }
-  [data-cube-env] [data-cube-front] {
+  .cube__front {
     transform: translate3d(0, 0, 500px) rotateY(180deg);
     background-position: -3000px -1000px; }
-  [data-cube-env] [data-cube-back] {
+  .cube__back {
     transform: translate3d(0, 0, -500px);
     background-position: -1000px -1000px; }
-  [data-cube-env] [data-cube-left] {
+  .cube__left {
     transform: translate3d(-500px, 0, 0) rotateY(90deg);
     background-position: 0 -1000px; }
-  [data-cube-env] [data-cube-right] {
+  .cube__right {
     transform: translate3d(500px, 0, 0) rotateY(-90deg);
     background-position: -2000px -1000px; }
-  [data-cube-env] [data-cube-top] {
+  .cube__top {
     transform: translate3d(0, -500px, 0) rotateX(-90deg);
     background-position: -1000px 0; }
-  [data-cube-env] [data-cube-bottom] {
+  .cube__bottom {
     transform: translate3d(0, 500px, 0) rotateX(90deg);
     background-position: -1000px -2000px; }
 

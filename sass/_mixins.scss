@@ -9,7 +9,7 @@
         perspective: $half-size;
     }
 
-    [data-#{$name}-env] {
+    .#{$name} {
         transform-style: preserve-3d;
         @include position(absolute, 50% null null 50%);
 
@@ -25,32 +25,32 @@
             @include size($size);
         }
 
-        [data-#{$name}-front] {
+        &__front {
             transform: translate3d(0, 0, $half-size) rotateY(180deg);
             background-position: -3 * $size -1 * $size;
         }
 
-        [data-#{$name}-back] {
+        &__back {
             transform: translate3d(0, 0, -1 * $half-size);
             background-position: -1 * $size -1 * $size;
         }
 
-        [data-#{$name}-left] {
+        &__left {
             transform: translate3d(-1 * $half-size, 0, 0) rotateY(90deg);
             background-position: 0 -1 * $size;
         }
 
-        [data-#{$name}-right] {
+        &__right {
             transform: translate3d($half-size, 0, 0) rotateY(-90deg);
             background-position: -2 * $size -1 * $size;
         }
 
-        [data-#{$name}-top] {
+        &__top {
             transform: translate3d(0, -1 * $half-size, 0) rotateX(-90deg);
             background-position: -1 * $size 0;
         }
 
-        [data-#{$name}-bottom] {
+        &__bottom {
             transform: translate3d(0, $half-size, 0) rotateX(90deg);
             background-position: -1 * $size -2 * $size;
         }

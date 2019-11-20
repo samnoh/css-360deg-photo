@@ -45,7 +45,7 @@ body {
     transform: translate3d(0, 500px, 0) rotateX(90deg);
     background-position: -1000px -2000px; }
 
-[data-cube-env] [data-cube-top] {
+.cube__top {
   background-position: -998px 0; }
 
 @keyframes spin {

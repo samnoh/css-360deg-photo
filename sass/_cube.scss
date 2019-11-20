@@ -1,7 +1,7 @@
 @include cube('cube', 'http://paulbourke.net/miscellaneous/cubemaps/cube.jpg', 1000px, false);
 
-[data-cube-env] {
-    [data-cube-top] {
+.cube {
+    &__top {
         background-position: -998px 0; // adjust position for this image
     }
 }
